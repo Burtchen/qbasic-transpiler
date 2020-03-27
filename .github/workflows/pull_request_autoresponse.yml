@@ -1,0 +1,19 @@
+name: Issue Autoresponse
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  auto-response:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: derekprior/add-autoresponse@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        respondableId: ${{ github.event.pull_request.node_id }}
+        response: "Sorry we have no time for this!"
+        author: ${{ github.event.issue.user.login }}
+        exemptedAuthors: "johnsmith, janedoe"
