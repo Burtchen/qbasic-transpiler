@@ -15,5 +15,6 @@ jobs:
       with:
         respondableId: ${{ github.event.pull_request.node_id }}
         pr-message: "Message that will be displayed on users' first pr. Look, a `code block` for markdown."
+        response: "Working on it"
         author: ${{ github.event.issue.user.login }}
         exemptedAuthors: "johnsmith, janedoe"
